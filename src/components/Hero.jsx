@@ -1,5 +1,11 @@
 function Hero() {
-  return <div>Hero</div>;
+  return (
+    <>
+      <section className="hero-section">
+        <div className="container"></div>
+      </section>
+    </>
+  );
 }
 
 export default Hero;

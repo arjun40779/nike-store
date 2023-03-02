@@ -1,0 +1,30 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 0, 0, 0.516);
+  width: 100%;
+  padding: 3rem 4rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: white;
+    font-size: 1.8rem;
+
+    i {
+      cursor: pointer;
+    }
+  }
+
+  img {
+    width: 6rem;
+  }
+}
