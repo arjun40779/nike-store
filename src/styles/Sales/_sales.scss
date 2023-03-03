@@ -1,0 +1,33 @@
+@use "../global/" as *;
+
+.sales-section {
+  padding: 0 6rem;
+}
+
+.sales-c {
+  display: flex;
+  flex-direction: column;
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 2rem 0;
+    gap: 2rem;
+  }
+}
+
+.sales-title {
+  h2 {
+    font-size: 4.5rem;
+    color: $black;
+  }
+}
+
+.item-img {
+  img {
+    width: 25rem;
+  }
+}
+
+.item-div {
+}

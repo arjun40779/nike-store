@@ -1,0 +1,23 @@
+import Item from "../utils/Item";
+import Title from "../utils/Title";
+
+function Sales({ endpoint: { title, items } }) {
+  return (
+    <>
+      <section className="sales-section">
+        <div className="container">
+          <div className="sales-c">
+            <Title title={title} />
+            <div className="sales-c__items">
+              {items?.map((item, i) => (
+                <Item {...item} key={i} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+export default Sales;

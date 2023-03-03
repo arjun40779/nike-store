@@ -133,4 +133,28 @@ nav {
 }
 .nav img {
   width: 6rem;
+}
+
+.sales-section {
+  padding: 0 6rem;
+}
+
+.sales-c {
+  display: flex;
+  flex-direction: column;
+}
+.sales-c__items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 2rem 0;
+  gap: 2rem;
+}
+
+.sales-title h2 {
+  font-size: 4.5rem;
+  color: #0f172a;
+}
+
+.item-img img {
+  width: 25rem;
 }/*# sourceMappingURL=styles.css.map */

@@ -1,6 +1,7 @@
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import { heroapi } from "./data/data";
+import Sales from "./components/Sales";
+import { heroapi, topratesales, popularsales } from "./data/data.js";
 
 function App() {
   return (
@@ -8,6 +9,8 @@ function App() {
       <Navbar />
       <main>
         <Hero heroapi={heroapi} />
+        <Sales endpoint={popularsales} />
+        <Sales endpoint={topratesales} />
       </main>
     </>
   );
