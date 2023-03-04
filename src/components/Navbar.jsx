@@ -1,11 +1,25 @@
+import { useEffect, useState } from "react";
 import Logo from "../assets/logo.png";
 
 function Navbar() {
+  const [navState, setNavState] = useState(false);
+
+  const onNavScroll = () => {
+    if (window.scrollY > 100) {
+      setNavState(true);
+    } else {
+      setNavState(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", onNavScroll);
+  }, []);
   return (
     <>
-      <nav>
+      <nav className={`${navState ? "navFixed" : ""}`}>
         <div className="container">
-          <div className="nav">
+          <div className={`nav ${navState ? "nav-black" : ""}`}>
             <img src={Logo} alt="logo" />
 
             <div className="nav__icons">

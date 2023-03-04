@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Sales from "./components/Sales";
@@ -12,6 +13,7 @@ function App() {
         <Sales ifExists endpoint={popularsales} />
         <Sales endpoint={topratesales} />
       </main>
+      <Footer />
     </>
   );
 }

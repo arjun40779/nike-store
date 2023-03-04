@@ -1,11 +1,13 @@
 @use "../global/" as *;
 
 nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   padding: 3rem 4rem;
+  z-index: 999999;
+  transition: all 0.3s;
 }
 
 .nav {
@@ -27,5 +29,22 @@ nav {
 
   img {
     width: 6rem;
+  }
+}
+
+.navFixed {
+  @extend nav;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  position: fixed;
+}
+
+.nav-black {
+  i {
+    color: $black !important;
+  }
+
+  img {
+    filter: invert(1);
   }
 }
