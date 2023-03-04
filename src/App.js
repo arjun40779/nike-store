@@ -9,7 +9,7 @@ function App() {
       <Navbar />
       <main>
         <Hero heroapi={heroapi} />
-        <Sales endpoint={popularsales} />
+        <Sales ifExists endpoint={popularsales} />
         <Sales endpoint={topratesales} />
       </main>
     </>
