@@ -346,6 +346,7 @@ footer p {
   right: 0;
   top: 0;
   z-index: 400;
+  transition: all 0.5s ease-in-out;
 }
 
 .cart-top {
@@ -418,4 +419,22 @@ footer p {
   color: #e2e8f0;
   background-color: #0f172a;
   box-shadow: 0 4px 6px -1px #0f172a;
+}
+
+.cart-open {
+  top: 0;
+  right: 0;
+}
+
+.cart-closed {
+  top: 0;
+  right: -100%;
+}
+
+.open-overlay {
+  display: flex;
+}
+
+.close-overlay {
+  display: none;
 }/*# sourceMappingURL=styles.css.map */

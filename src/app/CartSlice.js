@@ -1,17 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  cartState: false,
+  cartState: false, // useState
+  cartItems: [],
 };
 
 const CartSlice = createSlice({
   initialState,
   name: "cart",
   reducers: {
-    setOpenCart: (action, state) => {},
-    setCloseCart: (action, state) => {},
+    setOpenCart: (state, action) => {
+      state.cartState = action.payload.cartState;
+    },
+    setCloseCart: (state, action) => {
+      state.cartState = action.payload.cartState;
+    },
+    setAddItemToCart: (state, action) => {
+      state.cartItems.push(action.payload); // action.payload - item
+    },
   },
 });
 
-export const { setCloseCart, setOpenCart } = CartSlice.actions;
+export const { setCloseCart, setOpenCart, setAddItemToCart } =
+  CartSlice.actions;
+export const selectCartState = (state) => state.cart.cartState;
 export default CartSlice.reducer;

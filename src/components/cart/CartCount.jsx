@@ -1,9 +1,9 @@
-function CartCount() {
+function CartCount({ onCartToggle }) {
   return (
     <>
       <div className="cart-top">
         <div className="cart-top__left">
-          <i className="fa-solid fa-chevron-left"></i>
+          <i onClick={onCartToggle} className="fa-solid fa-chevron-left"></i>
           <p>
             Your Cart <span>(1 items)</span>
           </p>

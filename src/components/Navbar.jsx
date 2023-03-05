@@ -1,8 +1,19 @@
 import { useEffect, useState } from "react";
 import Logo from "../assets/logo.png";
+import { useDispatch } from "react-redux";
+import { setOpenCart } from "../app/CartSlice";
 
 function Navbar() {
   const [navState, setNavState] = useState(false);
+  const dispatch = useDispatch();
+
+  const onCartToggle = () => {
+    dispatch(
+      setOpenCart({
+        cartState: true,
+      })
+    );
+  };
 
   const onNavScroll = () => {
     if (window.scrollY > 100) {
@@ -31,7 +42,10 @@ function Navbar() {
             <div className="nav__icons">
               <i className="fa-solid fa-magnifying-glass"></i>
               <i className="fa-regular fa-heart"></i>
-              <i className="fa-solid fa-bag-shopping"></i>
+              <i
+                onClick={onCartToggle}
+                className="fa-solid fa-bag-shopping"
+              ></i>
             </div>
           </div>
         </div>

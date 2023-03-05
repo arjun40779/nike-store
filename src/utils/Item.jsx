@@ -1,6 +1,16 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { setAddItemToCart } from "../app/CartSlice";
 
 function Item({ id, ifExists, title, text, img, btn, rating, price }) {
+  const dispatch = useDispatch();
+
+  const addToCart = () => {
+    const item = { id, title, text, img, price };
+
+    dispatch(setAddItemToCart(item));
+  };
+
   return (
     <>
       <div className={`item-div ${ifExists ? "item-div-popular" : ""} `}>
@@ -15,7 +25,7 @@ function Item({ id, ifExists, title, text, img, btn, rating, price }) {
             </span>
           </div>
           <div className="item-div__bag-buy">
-            <button>
+            <button onClick={() => addToCart()}>
               <i className="fa-solid fa-bag-shopping"></i>
             </button>
             <button>{btn}</button>
