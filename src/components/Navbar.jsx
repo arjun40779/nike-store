@@ -20,7 +20,13 @@ function Navbar() {
       <nav className={`${navState ? "navFixed" : ""}`}>
         <div className="container">
           <div className={`nav ${navState ? "nav-black" : ""}`}>
-            <img src={Logo} alt="logo" />
+            <img
+              src={Logo}
+              alt="logo"
+              onClick={() =>
+                window.scrollTo({ top: (0, 0), behavior: "smooth" })
+              }
+            />
 
             <div className="nav__icons">
               <i className="fa-solid fa-magnifying-glass"></i>

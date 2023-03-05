@@ -3,7 +3,7 @@ import Vid1 from "../assets/video/vcover1.png";
 import Vid2 from "../assets/video/vcover2.png";
 import Vid3 from "../assets/video/vcover3.png";
 
-function Hero({ heroapi: { btntext, img, videos } }) {
+function Hero({ heroapi: { btntext, img } }) {
   return (
     <>
       <section className="hero-section">
@@ -14,7 +14,7 @@ function Hero({ heroapi: { btntext, img, videos } }) {
               <h1>
                 Play With Electric Nike <br /> Adapt 2.0 Sneakers
               </h1>
-              <button>{btntext}</button>
+              <a href="#collection">{btntext}</a>
             </div>
             {/* vids img socials */}
             <div className="hero-c__content">

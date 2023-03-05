@@ -4,7 +4,7 @@ import Title from "../utils/Title";
 function Sales({ ifExists, endpoint: { title, items } }) {
   return (
     <>
-      <section className="sales-section">
+      <section id="collection" className="sales-section">
         <div className="container">
           <div className="sales-c">
             <Title title={title} />

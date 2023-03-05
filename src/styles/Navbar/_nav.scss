@@ -6,7 +6,7 @@ nav {
   left: 0;
   width: 100%;
   padding: 3rem 4rem;
-  z-index: 999999;
+  z-index: 200;
   transition: all 0.3s;
 }
 
@@ -29,6 +29,7 @@ nav {
 
   img {
     width: 6rem;
+    cursor: pointer;
   }
 }
 
