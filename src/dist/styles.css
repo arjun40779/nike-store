@@ -437,4 +437,119 @@ footer p {
 
 .close-overlay {
   display: none;
+}
+
+.cart-item-div {
+  width: 100%;
+  height: 14rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+.cart-item-div__img-side {
+  display: flex;
+  gap: 3rem;
+}
+.cart-item-div__img-side img {
+  width: 19rem;
+  height: auto;
+  background-image: linear-gradient(to bottom, #1c64f2, #5a67d8);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.cart-item-div__img-side__title-btns {
+  display: flex;
+  flex-direction: column;
+}
+.cart-item-div__img-side__title-btns h4 {
+  font-size: 1.7rem;
+}
+.cart-item-div__img-side__title-btns p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+.cart-item-div__img-side__title-btns span {
+  display: flex;
+  gap: 1.5rem;
+}
+.cart-item-div__img-side__title-btns span button {
+  font-size: 1.7rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.cart-item-div__price-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+  gap: 5rem;
+}
+.cart-item-div__price-side p {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.cart-item-div__price-side i {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.cart-scroll {
+  overflow-y: scroll;
+  height: 75vh;
+  padding-bottom: 8rem;
+}
+
+.cart-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.checkout-div {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  justify-content: center;
+}
+.checkout-div__subtotal {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkout-div__subtotal h4 {
+  font-size: 1.7rem;
+}
+.checkout-div__subtotal p {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  background-color: #0f172a;
+  border-radius: 0.6rem;
+  padding: 0.2rem 0.6rem;
+}
+.checkout-div__btn {
+  width: 100%;
+}
+.checkout-div__btn button {
+  width: 100%;
+  color: #e2e8f0;
+  background-color: #0f172a;
+  border: none;
+  font-weight: 600;
+  font-size: 1.7rem;
+  padding: 0.4rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  cursor: pointer;
+  border: 2px solid #0f172a;
+  transition: all 0.2s;
+}
+.checkout-div__btn button:hover {
+  color: #0f172a;
+  background-color: #e2e8f0;
 }/*# sourceMappingURL=styles.css.map */
