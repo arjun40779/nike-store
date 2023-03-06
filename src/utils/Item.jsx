@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setAddItemToCart } from "../app/CartSlice";
+import { setAddItemToCart, setOpenCart } from "../app/CartSlice";
 
 function Item({ id, ifExists, title, text, img, btn, rating, price }) {
   const dispatch = useDispatch();
@@ -9,6 +9,14 @@ function Item({ id, ifExists, title, text, img, btn, rating, price }) {
     const item = { id, title, text, img, price };
 
     dispatch(setAddItemToCart(item));
+  };
+
+  const onCartToggle = () => {
+    dispatch(
+      setOpenCart({
+        cartState: true,
+      })
+    );
   };
 
   return (
@@ -28,7 +36,14 @@ function Item({ id, ifExists, title, text, img, btn, rating, price }) {
             <button onClick={() => addToCart()}>
               <i className="fa-solid fa-bag-shopping"></i>
             </button>
-            <button>{btn}</button>
+            <button
+              onClick={() => {
+                addToCart();
+                onCartToggle();
+              }}
+            >
+              {btn}
+            </button>
           </div>
         </div>
         {/* img */}

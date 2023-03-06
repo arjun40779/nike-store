@@ -3,17 +3,27 @@ import CartCount from "./cart/CartCount";
 import CartEmpty from "./cart/CartEmpty";
 import CartItem from "./cart/CartItem";
 import {
+  cartTotalAmount,
+  cartTotalQuantity,
   selectCartItems,
   selectCartState,
   setCloseCart,
+  setGetTotals,
 } from "../app/CartSlice";
+import { useEffect } from "react";
 
 function Cart() {
   const dispatch = useDispatch();
   const ifCartState = useSelector(selectCartState);
   const cartItems = useSelector(selectCartItems);
+  const totalAmount = useSelector(cartTotalAmount);
+  const totalQuantity = useSelector(cartTotalQuantity);
 
-  console.log(cartItems);
+  // console.log(cartItems);
+
+  useEffect(() => {
+    dispatch(setGetTotals());
+  }, [cartItems, dispatch]);
 
   const onCartToggle = () => {
     dispatch(
@@ -30,7 +40,7 @@ function Cart() {
       ></div>
 
       <div className={`cart-div ${ifCartState ? "cart-open" : "cart-closed"}`}>
-        <CartCount onCartToggle={onCartToggle} />
+        <CartCount totalQuantity={totalQuantity} onCartToggle={onCartToggle} />
 
         {cartItems.length === 0 ? (
           <CartEmpty onCartToggle={onCartToggle} />
@@ -47,7 +57,7 @@ function Cart() {
         <div className="checkout-div">
           <div className="checkout-div__subtotal">
             <h4>Subtotal</h4>
-            <p>100$</p>
+            <p>{totalAmount}$</p>
           </div>
           <div className="checkout-div__btn">
             <button>Checkout</button>

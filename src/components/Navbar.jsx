@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import Logo from "../assets/logo.png";
-import { useDispatch } from "react-redux";
-import { setOpenCart } from "../app/CartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { cartTotalQuantity, setOpenCart } from "../app/CartSlice";
 
 function Navbar() {
   const [navState, setNavState] = useState(false);
   const dispatch = useDispatch();
+  const totalQuantity = useSelector(cartTotalQuantity);
 
   const onCartToggle = () => {
     dispatch(
@@ -46,6 +47,7 @@ function Navbar() {
                 onClick={onCartToggle}
                 className="fa-solid fa-bag-shopping"
               ></i>
+              <p className="cart-number">{totalQuantity}</p>
             </div>
           </div>
         </div>
