@@ -1,6 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setRemoveItemFromCart } from "../../app/CartSlice";
+import {
+  setDecreaseItemQYT,
+  setIncreaseItemQYT,
+  setRemoveItemFromCart,
+} from "../../app/CartSlice";
 
 function CartItem({ item: { id, title, text, img, price, cartQuantity } }) {
   const dispatch = useDispatch();
@@ -9,6 +13,14 @@ function CartItem({ item: { id, title, text, img, price, cartQuantity } }) {
     dispatch(
       setRemoveItemFromCart({ id, title, text, img, price, cartQuantity })
     );
+  };
+
+  const onIncreaseItem = () => {
+    dispatch(setIncreaseItemQYT({ id, price }));
+  };
+
+  const onDecreaseItem = () => {
+    dispatch(setDecreaseItemQYT({ id }));
   };
 
   return (
@@ -21,11 +33,11 @@ function CartItem({ item: { id, title, text, img, price, cartQuantity } }) {
             <h4>{title}</h4>
             <p>{text}</p>
             <span>
-              <button>
+              <button onClick={onDecreaseItem}>
                 <i className="fa-solid fa-minus"></i>
               </button>
               <button>{cartQuantity}</button>
-              <button>
+              <button onClick={onIncreaseItem}>
                 <i className="fa-solid fa-plus"></i>
               </button>
             </span>

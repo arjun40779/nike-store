@@ -1,4 +1,12 @@
-function CartCount({ onCartToggle }) {
+import { useDispatch } from "react-redux";
+import { setClearCartItems } from "../../app/CartSlice";
+
+function CartCount({ onCartToggle, id }) {
+  const dispatch = useDispatch();
+
+  const onClearCartItems = () => {
+    dispatch(setClearCartItems({ id }));
+  };
   return (
     <>
       <div className="cart-top">
@@ -9,7 +17,7 @@ function CartCount({ onCartToggle }) {
           </p>
         </div>
         <div className="cart-top__right">
-          <i className="fa-solid fa-trash-can"></i>
+          <i onClick={onClearCartItems} className="fa-solid fa-trash-can"></i>
         </div>
       </div>
     </>
